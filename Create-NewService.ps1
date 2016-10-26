@@ -251,8 +251,9 @@ function Get-ServiceInfo {
     $Script:svcDisplayName = Get-ServiceDisplayName
     $Script:svcDescription = Get-ServiceDescription
     [Management.Automation.PSCredential]$Script:svcCreds = Get-ServiceCreds
-    Write-Host ''
-    Write-Host 'IMPORTANT!!!!! Please note, wherever you save the .exe file to, it will live forever and cannot be moved!!' -f Red
+    Write-Host 'You will now be prompted for a location to save the .exe file used to run the service.' -f Green
+    Pause
+    Write-Host 'IMPORTANT!!!!! Please note, wherever you save the .exe file to, it will live forever and cannot be moved!!' -f Black -b Red
     Write-Host ''
     Pause
     $Script:destination = Get-SaveFileName       
@@ -265,6 +266,9 @@ function Get-ServiceInfo {
     Write-Host "ServiceAccount= $($svcCreds.Username)" 
     Write-Host ''
 }
+
+
+
 #-------START:  DO NOT MODIFY ANYTHING BETWEEN THESE LINES ------------------------------------------------------------------------------------------#
 ######################################################################################################################################################
 ######################################################################################################################################################
@@ -293,7 +297,6 @@ Export-Files
 Import-dllFiles
 Get-ServiceInfo
 
-
 Write-Host ''
 Write-Host 'Generating .EXE...' -f Yellow
 New-SelfHostedPS -SourceFile $source -DestinationFile $destination -Service -ServiceDescription ' ' -ServiceName $svcName -ServiceDisplayName $svcDisplayName
@@ -311,9 +314,7 @@ $regValue = "$svcDescription"
 New-ItemProperty -Path $registryPath -Name $regName -Value $regValue -PropertyType String -Force | Out-Null
 
 Start-Sleep 1
-
 Set-ServiceCredential -serviceName $svcName -serviceCredential $svcCreds
-
 Start-Sleep 1
 
 Write-Host 'Starting Service...' -f Yellow
