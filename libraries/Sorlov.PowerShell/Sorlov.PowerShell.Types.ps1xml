@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Types>
+<Type>
+  <Name>Sorlov.PowerShell.Core.Dto.VersionInformation</Name>
+  <Members>
+    <MemberSet>
+      <Name>PsStandardMembers</Name>
+      <Members>
+       <NoteProperty>
+          <Name>DefaultDisplayProperty</Name>
+          <Value>Component</Value>
+       </NoteProperty>
+       <PropertySet>
+          <Name>DefaultDisplayPropertySet</Name>
+          <ReferencedProperties>
+             <Name>Component</Name>
+             <Name>Installed</Name>
+             <Name>Released</Name>
+             <Name>ShouldUpgrade</Name>
+             <Name>CoreComponent</Name>
+         </ReferencedProperties>
+       </PropertySet>
+      </Members>
+    </MemberSet>
+  </Members>
+</Type><Type>
+  <Name>Sorlov.PowerShell.SelfHosted.Dto.SelfHostedPSInfo</Name>
+  <Members>
+    <MemberSet>
+      <Name>PsStandardMembers</Name>
+      <Members>
+       <NoteProperty>
+          <Name>DefaultDisplayProperty</Name>
+          <Value>Path</Value>
+       </NoteProperty>
+       <PropertySet>
+          <Name>DefaultDisplayPropertySet</Name>
+          <ReferencedProperties>
+             <Name>Path</Name>
+             <Name>ScriptVersion</Name>
+             <Name>SignatureStatus</Name>
+             <Name>ApplicationType</Name>
+             <Name>GeneratedDate</Name>
+             <Name>Architecture</Name>
+             <Name>Modules</Name>
+             <Name>SignedBy</Name>
+             <Name>TimestampedBy</Name>
+             <Name>Files</Name>
+             <Name>GeneratorCompany</Name>
+             <Name>Copyright</Name>
+             <Name>ScriptName</Name>
+             <Name>ImageVersion</Name>
+             <Name>Company</Name>
+             <Name>GeneratorOwner</Name>
+             <Name>GeneratorVersion</Name>
+             <Name>GeneratedBy</Name>
+         </ReferencedProperties>
+       </PropertySet>
+      </Members>
+    </MemberSet>
+  </Members>
+</Type><Type> 
+    <Name>System.Object</Name> 
+    <Members> 
+      <ScriptMethod> 
+        <Name>MSDN</Name> 
+        <Script> 
+	$culture = $host.currentculture 
+	if ($args[0]) 
+	{ 
+	$culture = $args[0] 
+	} 
+
+	if (($global:MSDNViewer -eq $null) -or ($global:MSDNViewer.HWND -eq $null)) 
+	{ 
+	$global:MSDNViewer = new-object -ComObject InternetExplorer.Application 
+	} 
+	$Uri = "http://msdn2.microsoft.com/" + $culture + "/library/" +  ($this | select -first 1).GetType().FullName + ".ASPX" 
+	$global:MSDNViewer.Navigate2($Uri) 
+	$global:MSDNViewer.Visible = $TRUE 
+        </Script> 
+      </ScriptMethod> 
+    </Members> 
+</Type> 
+  <Type>
+      <Name>System.Array</Name>
+      <Members>
+         <ScriptMethod>
+            <Name>Select</Name>
+            <Script>
+               param(
+                  [Parameter(Mandatory=$true,Position=1)]$lambda,
+                  [type]$ResultType,
+                  [type]$SourceType = [PSObject]
+               )
+
+               if($lambda.GetType().Name -eq "Func``2") {
+                  $script = $lambda
+               } else {
+                  $script = $lambda -as [ScriptBlock]
+                  if(!$script) {
+                     if(!$ResultType) {
+                        $ResultType = @($this)[0].GetType().GetMember("$lambda").PropertyType
+                        if(!$ResultType) {
+                           throw "Lambda must be a property name or a ScriptBlock castable to [Func``2]"
+                        }
+                     }
+                     $script = {$args[0].$lambda}
+                  } elseif(!$ResultType) {
+                     $ResultType = (&amp; $lambda @($this)[0]).GetType()
+                  }
+
+                  $script = $script -as "Func[$SourceType,$ResultType]"
+
+                  if(!$script) {
+                     throw "Lambda must be a property name or a ScriptBlock castable to [Func``2] (type determined: [Func[$SourceType,$ResultType]])"
+                  }
+               } 
+                  
+               $list   = $this -as "$SourceType[]"
+               if(!$list) {
+                  throw "Only heterogeneous collections (where all objects are the same type) can use the .Ordered method"
+               }
+
+               [System.Linq.Enumerable]::Select( $list , $script )
+             </Script>
+         </ScriptMethod>
+         <ScriptMethod>
+            <Name>SelectMany</Name>
+            <Script>
+               param(
+                  [Parameter(Mandatory=$true,Position=1)]$lambda
+               )
+
+               if($lambda -is [String]) {
+                  $lambda = {$args[0].$lambda}.GetNewClosure()
+               } 
+
+               if($lambda.GetType().Name -eq "Func``3") {
+                  [System.Linq.Enumerable]::SelectMany( [Object[]]$this, [System.Func[Object,int,System.Collections.Generic.IEnumerable[Object]]]$lambda )
+               } else {
+                  [System.Linq.Enumerable]::SelectMany( [Object[]]$this, [System.Func[Object,System.Collections.Generic.IEnumerable[Object]]]$lambda )
+               }
+             </Script>
+         </ScriptMethod>
+         <ScriptMethod>
+            <Name>Union</Name>
+            <Script>
+               param([Parameter(Mandatory=$true,Position=1)]$Second, [Type]$AsType)
+
+               if($AsType) {
+                  [System.Linq.Enumerable]::Union( ($this -as "$AsType[]"), ($second -as "$AsType[]"))
+               } else {
+                  [System.Linq.Enumerable]::Union([PSObject[]]$this, [PSObject[]]$second)
+               }
+             </Script>
+         </ScriptMethod> 
+         <ScriptMethod>
+            <Name>ToList</Name>
+            <Script>
+               param(
+                  [Type]$SourceType = [PSObject]
+               )
+
+               $list = $this -as "$SourceType[]"
+               [System.Linq.Enumerable]::ToList($this)
+             </Script>
+         </ScriptMethod>         
+         <ScriptMethod>
+            <Name>OrderBy</Name>
+            <Script>
+               param(
+                  [Parameter(Mandatory=$true,Position=1)]$lambda,
+                  $SortableType,
+                  $SourceType = [PSObject]
+               )
+
+               if($lambda.GetType().Name -eq "Func``2") {
+                  $script = $lambda
+               } else {
+                  $script = $lambda -as [ScriptBlock]
+                  if(!$script) {
+                     if(!$SortableType) {
+                        $SortableType = @($this)[0].GetType().GetMember("$lambda").PropertyType
+                        if(!$SortableType) {
+                           throw "Lambda must be a property name or a ScriptBlock castable to [Func``2]"
+                        }
+                     }
+                     $script = {$args[0].$lambda}
+                  } elseif(!$SortableType) {
+                     $SortableType = (&amp; $lambda @($this)[0]).GetType()
+                  }
+
+                  $script = $script -as "Func[$SourceType,$SortableType]"
+
+                  if(!$script) {
+                     throw "Lambda must be a property name or a ScriptBlock castable to [Func[SourceType,SortableType]] (type determined: [Func[$SourceType,$SortableType]])"
+                  }
+               } 
+                  
+               $list   = $this -as "$SourceType[]"
+               if(!$list) {
+                  throw "Only heterogeneous collections (where all objects are the same type) can use the .Ordered method"
+               }
+
+               [System.Linq.Enumerable]::OrderBy( $list , $script )
+             </Script>
+         </ScriptMethod>
+         <ScriptMethod>
+            <Name>Where</Name>
+            <Script>
+               param(
+                  [Parameter(Mandatory=$true,Position=1)]$lambda,
+                  [Type]$SourceType = [Object]
+               )
+
+               if($lambda.GetType().Name -match "Func``[23]") {
+                  $script = $lambda
+                  Write-Verbose "Lambda is already $($script.GetType())"
+               } else {
+
+                  if($lambda -is [ScriptBlock]) {
+                     $script = $lambda
+
+                  } elseif($lambda -is [String]) {
+
+                     $property, $op, $value = $lambda -split "\s+(-\w+)\s+" | %{ $_.Trim("`"' ") }
+                     # If there was no operator, lets assume they mean: | Where $lambda
+                     if("$op".Length  -eq 0) {
+                        $script = {param($_)[bool]$_.$lambda}
+                     }
+
+                     if(!@($value).Count -eq 1) {
+                        throw "The simplified string syntax requires the format: 'PropertyName -op Value'`n" +
+                              "Where 'op' is one of the comparison operators (-eq, -like, -match, etc.)`n" +
+                              "Get-Help about_comparison_operators"
+                     }
+                     # If they put more than one thing left of the -op, let's pretend they forgot to quote it as a single string
+                     $value = $value -join " "
+
+                     # Now turn that into a script:
+                     $filter = "{{param(`$_) `$_.{0} {1} '{2}'}}" -f $property, $op, $value
+                     Write-Verbose "Filter: $filter"
+                     $script = iex $filter
+                  } 
+                   
+                  $script = $script -as "System.Func[$SourceType,bool]"
+
+                  if(!$script) {
+                     throw "Lambda could not be parsed. It must be either:`n" +
+                           " * A simple property name (e.g.: PSIsContainer)`n" +
+                           " * A simple where string (e.g.: 'Name -like W*')`n" +
+                           " * A ScriptBlock which we can cast to [Func[$SourceType,bool]]`n" +
+                           " * A ScriptBlock already strongly typed as [Func[$SourceType,bool]]`n" +
+                           " * OR a ScriptBlock strongly typed as [Func[$SourceType,int,bool]]`n" +
+                           " The latter allows you to use an item's index in the collection as part of your logic"
+                  }
+               }
+                  
+               $list = $this -as "$SourceType[]"
+
+               [System.Linq.Enumerable]::Where( $this, $script )
+             </Script>
+         </ScriptMethod>
+         <ScriptMethod>
+            <Name>Any</Name>
+            <Script>
+               param(
+                  [Parameter(Mandatory=$true,Position=1)]$lambda,
+                  [Type]$SourceType = [Object]
+               )
+
+               if($lambda.GetType().Name -match "Func``[23]") {
+                  $script = $lambda
+                  Write-Verbose "Lambda is already $($script.GetType())"
+               } else {
+
+                  if($lambda -is [ScriptBlock]) {
+                     $script = $lambda
+
+                  } elseif($lambda -is [String]) {
+
+                     $property, $op, $value = $lambda -split "\s+(-\w+)\s+" | %{ $_.Trim("`"' ") }
+                     # If there was no operator, lets assume they mean: | Where $lambda
+                     if("$op".Length  -eq 0) {
+                        $script = {param($_)[bool]$_.$lambda}
+                     }
+
+                     if(!@($value).Count -eq 1) {
+                        throw "The simplified string syntax requires the format: 'PropertyName -op Value'`n" +
+                              "Where 'op' is one of the comparison operators (-eq, -like, -match, etc.)`n" +
+                              "Get-Help about_comparison_operators"
+                     }
+                     # If they put more than one thing left of the -op, let's pretend they forgot to quote it as a single string
+                     $value = $value -join " "
+
+                     # Now turn that into a script:
+                     $filter = "{{param(`$_) `$_.{0} {1} '{2}'}}" -f $property, $op, $value
+                     Write-Verbose "Filter: $filter"
+                     $script = iex $filter
+                  } 
+                   
+                  $script = $script -as "System.Func[$SourceType,bool]"
+
+                  if(!$script) {
+                     throw "Lambda could not be parsed. It must be either:`n" +
+                           " * A simple property name (e.g.: PSIsContainer)`n" +
+                           " * A simple where string (e.g.: 'Name -like W*')`n" +
+                           " * A ScriptBlock which we can cast to [Func[$SourceType,bool]]`n" +
+                           " OR ScriptBlock already strongly typed as [Func[$SourceType,bool]]"
+                  }
+               }
+                  
+               $list = $this -as "$SourceType[]"
+
+               [System.Linq.Enumerable]::Any( $this, $script )
+             </Script>
+         </ScriptMethod>         
+      </Members>
+   </Type></Types>
