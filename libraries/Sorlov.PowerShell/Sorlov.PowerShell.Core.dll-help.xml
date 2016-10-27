@@ -1,0 +1,2342 @@
+<helpItems xmlns="http://msh" schema="maml">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-Assembly</command:name>
+      <maml:description>
+        <maml:para>Returns a list of all loaded assemblies</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>Assembly</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a list of all loaded assemblies</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-Assembly -detailed". For technical information, type "Get-Help Get-Assembly -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-Quote</command:name>
+      <maml:description>
+        <maml:para>Gets the daily qoute</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>Quote</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This cmdlet gets a qoute of the day</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-Quote</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Display</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Display</maml:name>
+        <maml:description>
+          <maml:para>Prints the message nice on screen</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-Quote -detailed". For technical information, type "Get-Help Get-Quote -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-NotifyIcon</command:name>
+      <maml:description>
+        <maml:para>¨Shows a tray icon and a message balloon</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>NotifyIcon</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Perfect for displaying information from background scripts.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:parameters />
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-NotifyIcon -detailed". For technical information, type "Get-Help Get-NotifyIcon -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message $Title Warning</dev:code>
+        <dev:remarks>
+          <maml:para>Shows the $Message and the title $Title using the warning icon</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message</dev:code>
+        <dev:remarks>
+          <maml:para>Shows a message containing $Message in the taskbar of the computer</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Set-NotifyIcon</command:name>
+      <maml:description>
+        <maml:para>¨Shows a tray icon and a message balloon</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>NotifyIcon</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Perfect for displaying information from background scripts.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-NotifyIcon</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="1">
+          <maml:name>TooltipText</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>TooltipText</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Set-NotifyIcon -detailed". For technical information, type "Get-Help Set-NotifyIcon -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message $Title Warning</dev:code>
+        <dev:remarks>
+          <maml:para>Shows the $Message and the title $Title using the warning icon</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message</dev:code>
+        <dev:remarks>
+          <maml:para>Shows a message containing $Message in the taskbar of the computer</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>New-NotifyIcon</command:name>
+      <maml:description>
+        <maml:para>¨Shows a tray icon and a message balloon</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>New</command:verb>
+      <command:noun>NotifyIcon</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Perfect for displaying information from background scripts.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-NotifyIcon</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>TooltipText</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="2" variableLength="false">
+        <maml:name>TooltipText</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help New-NotifyIcon -detailed". For technical information, type "Get-Help New-NotifyIcon -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message $Title Warning</dev:code>
+        <dev:remarks>
+          <maml:para>Shows the $Message and the title $Title using the warning icon</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message</dev:code>
+        <dev:remarks>
+          <maml:para>Shows a message containing $Message in the taskbar of the computer</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Remove-NotifyIcon</command:name>
+      <maml:description>
+        <maml:para>¨Shows a tray icon and a message balloon</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Remove</command:verb>
+      <command:noun>NotifyIcon</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Perfect for displaying information from background scripts.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-NotifyIcon</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Remove-NotifyIcon -detailed". For technical information, type "Get-Help Remove-NotifyIcon -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message</dev:code>
+        <dev:remarks>
+          <maml:para>Shows a message containing $Message in the taskbar of the computer</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message $Title Warning</dev:code>
+        <dev:remarks>
+          <maml:para>Shows the $Message and the title $Title using the warning icon</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Set-Window</command:name>
+      <maml:description>
+        <maml:para>Gets the position of a windows form</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>Window</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns the current, or selected window, position</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-Window</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>WindowHandle</maml:name>
+          <command:parameterValue required="true">IntPtr</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>X</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="3">
+          <maml:name>Y</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="4">
+          <maml:name>Width</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="5">
+          <maml:name>Height</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="6">
+          <maml:name>State</maml:name>
+          <command:parameterValue required="true">Normal | Minimized | Maximized</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="7">
+          <maml:name>Flash</maml:name>
+          <command:parameterValue required="true">Stop | Infinite | Quick | Long</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1" variableLength="false">
+        <maml:name>WindowHandle</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">IntPtr</command:parameterValue>
+        <dev:type>
+          <maml:name>IntPtr</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="2" variableLength="false">
+        <maml:name>X</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="3" variableLength="false">
+        <maml:name>Y</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="4" variableLength="false">
+        <maml:name>Width</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="5" variableLength="false">
+        <maml:name>Height</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="6" variableLength="false">
+        <maml:name>State</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">WindowState</command:parameterValue>
+        <dev:type>
+          <maml:name>WindowState</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="7" variableLength="false">
+        <maml:name>Flash</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">WindowFlash</command:parameterValue>
+        <dev:type>
+          <maml:name>WindowFlash</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Set-Window -detailed". For technical information, type "Get-Help Set-Window -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Get-WindowPosition (Get-Process 'notepad.exe').MainWindowHandle</dev:code>
+        <dev:remarks>
+          <maml:para>Returns the window position for notepad</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Get-WindowPosition</dev:code>
+        <dev:remarks>
+          <maml:para>Returns the position for current powershell host</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Add-Assembly</command:name>
+      <maml:description>
+        <maml:para>Load a assembly into domain</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Add</command:verb>
+      <command:noun>Assembly</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Loads a specified assembly into memory. This is permanent until you restart PowerShell. Equivivalent to loading a assembly by using reflection.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Add-Assembly</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>AssemblyName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>ByLocation</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>AssemblyName</maml:name>
+        <maml:description>
+          <maml:para>The name or path to assembly for load</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="2" variableLength="false">
+        <maml:name>ByLocation</maml:name>
+        <maml:description>
+          <maml:para>Will load the assembly from a specific location (not GAC)</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Add-Assembly -detailed". For technical information, type "Get-Help Add-Assembly -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Add-Assembly c:\someassembly.dll -ByLocation</dev:code>
+        <dev:remarks>
+          <maml:para>Loads assembly from c:\someassembly.dll</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Add-Assembly System.Security</dev:code>
+        <dev:remarks>
+          <maml:para>Loads System.Security into memory from GAC</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-LatestVersion</command:name>
+      <maml:description>
+        <maml:para>Load a assembly</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>LatestVersion</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Load a assembly</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-LatestVersion</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>ReleaseNotes</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>Force</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="3">
+          <maml:name>NoPrompt</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="4">
+          <maml:name>NoDownload</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>ReleaseNotes</maml:name>
+        <maml:description>
+          <maml:para>Return the release notes.</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="2" variableLength="false">
+        <maml:name>Force</maml:name>
+        <maml:description>
+          <maml:para>Force update</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="3" variableLength="false">
+        <maml:name>NoPrompt</maml:name>
+        <maml:description>
+          <maml:para>Do not prompt for updates</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="4" variableLength="false">
+        <maml:name>NoDownload</maml:name>
+        <maml:description>
+          <maml:para>Prohibit download</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-LatestVersion -detailed". For technical information, type "Get-Help Get-LatestVersion -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Remove-Alias</command:name>
+      <maml:description>
+        <maml:para>Removes a defined alias</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Remove</command:verb>
+      <command:noun>Alias</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Removes a defined alias</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Remove-Alias</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>AliasName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>AliasName</maml:name>
+        <maml:description>
+          <maml:para>The assembly to load</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Remove-Alias -detailed". For technical information, type "Get-Help Remove-Alias -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-AdminStatus</command:name>
+      <maml:description>
+        <maml:para>Returns a list of all loaded assemblies</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>AdminStatus</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a list of all loaded assemblies</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-AdminStatus</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The file or directory to touch</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-AdminStatus -detailed". For technical information, type "Get-Help Get-AdminStatus -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Restart-PowerShell</command:name>
+      <maml:description>
+        <maml:para>Starts a new session and then kills this one</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Restart</command:verb>
+      <command:noun>PowerShell</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Starts a new session and then kills this one</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Restart-PowerShell</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The file or directory to touch</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Restart-PowerShell -detailed". For technical information, type "Get-Help Restart-PowerShell -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Invoke-Elevated</command:name>
+      <maml:description>
+        <maml:para>Returns a list of all loaded assemblies</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Invoke</command:verb>
+      <command:noun>Elevated</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a list of all loaded assemblies</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-Elevated</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The file or directory to touch</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Invoke-Elevated -detailed". For technical information, type "Get-Help Invoke-Elevated -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Import-Assembly</command:name>
+      <maml:description>
+        <maml:para>Returns a list of all loaded assemblies</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Import</command:verb>
+      <command:noun>Assembly</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns a list of all loaded assemblies</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Import-Assembly</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The file or directory to touch</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Import-Assembly -detailed". For technical information, type "Get-Help Import-Assembly -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Exit-PSEnvironment</command:name>
+      <maml:description>
+        <maml:para>Internal exit hook for the Sorlov.PowerShell environment</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Exit</command:verb>
+      <command:noun>PSEnvironment</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This command is mostly for internal use or to save the enviroment during a session</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Exit-PSEnvironment</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The file or directory to touch</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Exit-PSEnvironment -detailed". For technical information, type "Get-Help Exit-PSEnvironment -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Block-Mutex</command:name>
+      <maml:description>
+        <maml:para>Blocks a mutex or wait for it to be free</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Block</command:verb>
+      <command:noun>Mutex</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This commandlet reserves a mutex and returns or if the mutex is already reserved it waits for it to be released.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Block-Mutex</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The name of the mutex</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Block-Mutex -detailed". For technical information, type "Get-Help Block-Mutex -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Invoke-ParalellForeach</command:name>
+      <maml:description>
+        <maml:para>This function can be used to execute tasks in parallel.</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Invoke</command:verb>
+      <command:noun>ParalellForeach</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>his function can be used to execute tasks in parallel with more than 5 parallel tasks at once. The number of parallel tasks can be defined by parameter. The input is accepted by defining it by using the -InputObject parameter which also accepts input from the pipeline.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Invoke-ParalellForeach</maml:name>
+        <command:parameter required="true" position="named">
+          <maml:name>InputObject</maml:name>
+          <command:parameterValue required="true">PSObject</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>MaxThreads</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue)" position="named" variableLength="false">
+        <maml:name>InputObject</maml:name>
+        <maml:description>
+          <maml:para>The document to convert to PDF</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">PSObject</command:parameterValue>
+        <dev:type>
+          <maml:name>PSObject</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="2" variableLength="false">
+        <maml:name>MaxThreads</maml:name>
+        <maml:description>
+          <maml:para>The document to convert to PDF</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Invoke-ParalellForeach -detailed". For technical information, type "Get-Help Invoke-ParalellForeach -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>ForEach-Parallel -InputObject (Get-ChildItem -Path "D:\Files") -MaxThreads 100 -ScriptBlock {Copy-Item -Path $_.FullName -Destination E:\Company\Files}</dev:code>
+        <dev:remarks>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Get-ChildItem -Path D:\Files | ForEach-Parallel -MaxThreads 100 -ScriptBlock {Copy-Item -Path $_.FullName -Destination E:\Company\Files}</dev:code>
+        <dev:remarks>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 3-----------------------</maml:title>
+        <dev:code>1..500 | Foreach-Parallel -MaxThreads 20 -ScriptBlock {New-VM –Name VM$_ –MemoryStartupBytes 512MB}</dev:code>
+        <dev:remarks>
+          <maml:para />
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Unblock-Mutex</command:name>
+      <maml:description>
+        <maml:para>Blocks a mutex or wait for it to be free</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Unblock</command:verb>
+      <command:noun>Mutex</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This commandlet reserves a mutex and returns or if the mutex is already reserved it waits for it to be released.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Unblock-Mutex</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Name</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Name</maml:name>
+        <maml:description>
+          <maml:para>The name of the mutex</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Unblock-Mutex -detailed". For technical information, type "Get-Help Unblock-Mutex -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Set-DesktopColor</command:name>
+      <maml:description>
+        <maml:para>Sets transparancy for the current or selected window</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>DesktopColor</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Sets transparancy for the current or selected window (Windows Vista &amp; Windows 7 only)</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-DesktopColor</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>Color</maml:name>
+          <command:parameterValue required="true">Object</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Color</maml:name>
+        <maml:description>
+          <maml:para>A color to set</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Object</command:parameterValue>
+        <dev:type>
+          <maml:name>Object</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Set-DesktopColor -detailed". For technical information, type "Get-Help Set-DesktopColor -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-DesktopColor</command:name>
+      <maml:description>
+        <maml:para>Get the color of the desktop</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>DesktopColor</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Get the color of the desktop</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-DesktopColor</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>AdvancedMode</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1" variableLength="false">
+        <maml:name>AdvancedMode</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-DesktopColor -detailed". For technical information, type "Get-Help Get-DesktopColor -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Disable-WindowControlBox</command:name>
+      <maml:description>
+        <maml:para>Disables the controlbox on the window</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Disable</command:verb>
+      <command:noun>WindowControlBox</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Disables the controlbox on the current, or other specified hWnd, window.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Disable-WindowControlBox</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>WindowHandle</maml:name>
+          <command:parameterValue required="true">IntPtr</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>WindowHandle</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">IntPtr</command:parameterValue>
+        <dev:type>
+          <maml:name>IntPtr</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Disable-WindowControlBox -detailed". For technical information, type "Get-Help Disable-WindowControlBox -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Disable-WindowControlBox (Get-Process 'notepad.exe').MainWindowHandle</dev:code>
+        <dev:remarks>
+          <maml:para>Disables the controlbox on the notepad window</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Disable-WindowControlBox</dev:code>
+        <dev:remarks>
+          <maml:para>Disables the controlbox on the current window</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Enable-WindowControlBox</maml:linkText>
+        <maml:uri />
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Enable-WindowControlBox</command:name>
+      <maml:description>
+        <maml:para>Enables the controlbox on the window</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Enable</command:verb>
+      <command:noun>WindowControlBox</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Enables the controlbox on the current, or other specified hWnd, window.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Enable-WindowControlBox</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>WindowHandle</maml:name>
+          <command:parameterValue required="true">IntPtr</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue)" position="1" variableLength="false">
+        <maml:name>WindowHandle</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">IntPtr</command:parameterValue>
+        <dev:type>
+          <maml:name>IntPtr</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Enable-WindowControlBox -detailed". For technical information, type "Get-Help Enable-WindowControlBox -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Enable-WindowControlBox</dev:code>
+        <dev:remarks>
+          <maml:para>Enables the controlbox on the current window</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Enable-WindowControlBox (Get-Process 'notepad.exe').MainWindowHandle</dev:code>
+        <dev:remarks>
+          <maml:para>Enables the controlbox on the notepad window</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks>
+      <maml:navigationLink>
+        <maml:linkText>Disable-WindowControlBox</maml:linkText>
+        <maml:uri />
+      </maml:navigationLink>
+    </maml:relatedLinks>
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-Window</command:name>
+      <maml:description>
+        <maml:para>Gets the position of a windows form</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>Window</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Returns the current, or selected window, position</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-Window</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>WindowHandle</maml:name>
+          <command:parameterValue required="true">IntPtr</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1" variableLength="false">
+        <maml:name>WindowHandle</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">IntPtr</command:parameterValue>
+        <dev:type>
+          <maml:name>IntPtr</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-Window -detailed". For technical information, type "Get-Help Get-Window -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Get-WindowPosition (Get-Process 'notepad.exe').MainWindowHandle</dev:code>
+        <dev:remarks>
+          <maml:para>Returns the window position for notepad</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Get-WindowPosition</dev:code>
+        <dev:remarks>
+          <maml:para>Returns the position for current powershell host</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Set-WindowsTransparency</command:name>
+      <maml:description>
+        <maml:para>Sets transparancy for the current or selected window</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Set</command:verb>
+      <command:noun>WindowsTransparency</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Sets transparancy for the current or selected window (Windows Vista &amp; Windows 7 only)</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Set-WindowsTransparency</maml:name>
+        <command:parameter required="false" position="1">
+          <maml:name>WindowHandle</maml:name>
+          <command:parameterValue required="true">IntPtr</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1" variableLength="false">
+        <maml:name>WindowHandle</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">IntPtr</command:parameterValue>
+        <dev:type>
+          <maml:name>IntPtr</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Set-WindowsTransparency -detailed". For technical information, type "Get-Help Set-WindowsTransparency -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Show-Balloon</command:name>
+      <maml:description>
+        <maml:para>¨Shows a tray icon and a message balloon</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+      </maml:copyright>
+      <command:verb>Show</command:verb>
+      <command:noun>Balloon</command:noun>
+      <dev:version>4.5.1.0</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>Perfect for displaying information from background scripts.</maml:para>
+      <maml:para />
+      <maml:para>Copyright © 2013 Daniel Sörlöv</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Show-Balloon</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>Message</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>Title</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="4">
+          <maml:name>Icon</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="5">
+          <maml:name>Duration</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="6">
+          <maml:name>NotifyIconName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="1" variableLength="false">
+        <maml:name>Message</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="2" variableLength="false">
+        <maml:name>Title</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="4" variableLength="false">
+        <maml:name>Icon</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="5" variableLength="false">
+        <maml:name>Duration</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="6" variableLength="false">
+        <maml:name>NotifyIconName</maml:name>
+        <maml:description>
+          <maml:para>The host or email to check</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Show-Balloon -detailed". For technical information, type "Get-Help Show-Balloon -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples>
+      <command:example>
+        <maml:title>------------------EXAMPLE 1-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message $Title Warning</dev:code>
+        <dev:remarks>
+          <maml:para>Shows the $Message and the title $Title using the warning icon</maml:para>
+        </dev:remarks>
+      </command:example>
+      <command:example>
+        <maml:title>------------------EXAMPLE 2-----------------------</maml:title>
+        <dev:code>Show-Balloon $Message</dev:code>
+        <dev:remarks>
+          <maml:para>Shows a message containing $Message in the taskbar of the computer</maml:para>
+        </dev:remarks>
+      </command:example>
+    </command:examples>
+    <maml:relatedLinks />
+  </command:command>
+</helpItems>
