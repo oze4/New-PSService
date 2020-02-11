@@ -3,6 +3,12 @@ Turn any looping .ps1 script into a Windows Service With the help of the include
 
 THANK YOU DANIEL SORLOV!
 
+## Installation 
+To install this module, simply run:
+```powershell
+Install-Module -Name ScriptAsService
+```
+
 ## Example
 For an example of how to use the module, clone the project locally and open an elevated PowerShell Prompt in the cloned folder (or `cd` into the cloned folder once you've opened PowerShell):
 
