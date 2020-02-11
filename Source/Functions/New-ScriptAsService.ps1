@@ -39,6 +39,13 @@ Function New-ScriptAsService {
          The version you want the binary output to have - if you do not specify one, the version defaults to 1.0.0.
          Must be a valid [Semantic Version](semver.org).
 
+        .EXAMPLE
+         New-ScriptAsService -Path .\Project\project.ps1 -Name Project -DisplayName 'Looping Project'
+
+         This will create a script-as-service binary, called `project.exe`, which when installed as a service
+         will have a name of `Project` and a display name of `Looping Project`. The description will be empty
+         and the version will be `1.0.0`.
+
         .PARAMETER SigningCertificatePath
          The full or relative path to the certificate you want to use for signing your binary.
          Must be a cert valid for code signing.
@@ -89,14 +96,15 @@ Function New-ScriptAsService {
     )
 
     $ServiceParameters = @{
-        SourceFile = $Path
-        DestinationFile = $Destination
-        Service = $true
+        SourceFile         = $Path
+        DestinationFile    = $Destination
+        Service            = $true
         ServiceDescription = $Description
-        ServiceName = $Name
+        ServiceName        = $Name
         ServiceDisplayName = $DisplayName
-        Version = [string]$Version
+        Version            = [string]$Version
     }
+    
     If (-not [string]::IsNullOrEmpty($SigningCertificatePath)){
         $null = $ServiceParameters.Add("Sign",$true)
         $null = $ServiceParameters.Add("Certificate",$SigningCertificatePath)
