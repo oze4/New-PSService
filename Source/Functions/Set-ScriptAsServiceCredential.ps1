@@ -17,6 +17,13 @@ function Set-ScriptAsServiceCredential {
         .PARAMETER ComputerName
          The ComputerName on which the service is to be updated.
          By default, this command executes against the localmachine.
+
+        .EXAMPLE
+         Set-ScriptAsServiceCredential -Name MyProject -Credential (Get-Credential SomeAccount)
+
+         This command will ask for the credentials for `SomeAccount` and then set the service `MyProject`
+         to run under `SomeAccount` using the specified credentials.
+
     #>
     [cmdletbinding()]
     param(
@@ -26,55 +33,55 @@ function Set-ScriptAsServiceCredential {
     )
 
     $ServiceQueryParameters = @{
-        "Namespace" = "root\CIMV2"
-        "Class" = "Win32_Service"
+        "Namespace"    = "root\CIMV2"
+        "Class"        = "Win32_Service"
         "ComputerName" = $ComputerName
-        "Filter" = "Name='$Name' OR DisplayName='$Name'"
+        "Filter"       = "Name='$Name' OR DisplayName='$Name'"
     }
-    $service = Get-WmiObject @ServiceQueryParameters
+    $Service = Get-WmiObject @ServiceQueryParameters
 
-    if ( -not $service ) {
-        Write-Error "Unable to find service named '$serviceName' on '$computerName'."
+    if ( -not $Service ) {
+        Write-Error "Unable to find service named '$ServiceName' on '$ComputerName'."
     } else {
         # See https://msdn.microsoft.com/en-us/library/aa384901.aspx
-        $returnValue = ($service.Change($null,                       # DisplayName
+        $returnValue = ($Service.Change($null,                       # DisplayName
                 $null,                                               # PathName
                 $null,                                               # ServiceType
                 $null,                                               # ErrorControl
                 $null,                                               # StartMode
                 $null,                                               # DesktopInteract
-                $serviceCredential.UserName,                         # StartName
-                $serviceCredential.GetNetworkCredential().Password,  # StartPassword
+                $ServiceCredential.UserName,                         # StartName
+                $ServiceCredential.GetNetworkCredential().Password,  # StartPassword
                 $null,                                               # LoadOrderGroup
                 $null,                                               # LoadOrderGroupDependencies
                 $null)).ReturnValue                                  # ServiceDependencies
-        $errorMessage = "Error setting credentials for service '$serviceName' on '$computerName'"
+        $ErrorMessage = "Error setting credentials for service '$ServiceName' on '$ComputerName'"
         switch ( $returnValue ) {
-            0  { Write-Verbose "Set credentials for service '$serviceName' on '$computerName'" }
-            1  { Write-Error "$errorMessage - Not Supported" }
-            2  { Write-Error "$errorMessage - Access Denied" }
-            3  { Write-Error "$errorMessage - Dependent Services Running" }
-            4  { Write-Error "$errorMessage - Invalid Service Control" }
-            5  { Write-Error "$errorMessage - Service Cannot Accept Control" }
-            6  { Write-Error "$errorMessage - Service Not Active" }
-            7  { Write-Error "$errorMessage - Service Request timeout" }
-            8  { Write-Error "$errorMessage - Unknown Failure" }
-            9  { Write-Error "$errorMessage - Path Not Found" }
-            10 { Write-Error "$errorMessage - Service Already Stopped" }
-            11 { Write-Error "$errorMessage - Service Database Locked" }
-            12 { Write-Error "$errorMessage - Service Dependency Deleted" }
-            13 { Write-Error "$errorMessage - Service Dependency Failure" }
-            14 { Write-Error "$errorMessage - Service Disabled" }
-            15 { Write-Error "$errorMessage - Service Logon Failed" }
-            16 { Write-Error "$errorMessage - Service Marked For Deletion" }
-            17 { Write-Error "$errorMessage - Service No Thread" }
-            18 { Write-Error "$errorMessage - Status Circular Dependency" }
-            19 { Write-Error "$errorMessage - Status Duplicate Name" }
-            20 { Write-Error "$errorMessage - Status Invalid Name" }
-            21 { Write-Error "$errorMessage - Status Invalid Parameter" }
-            22 { Write-Error "$errorMessage - Status Invalid Service Account" }
-            23 { Write-Error "$errorMessage - Status Service Exists" }
-            24 { Write-Error "$errorMessage - Service Already Paused" }
+            0  { Write-Verbose "Set credentials for service '$ServiceName' on '$ComputerName'" }
+            1  { Write-Error "$ErrorMessage - Not Supported" }
+            2  { Write-Error "$ErrorMessage - Access Denied" }
+            3  { Write-Error "$ErrorMessage - Dependent Services Running" }
+            4  { Write-Error "$ErrorMessage - Invalid Service Control" }
+            5  { Write-Error "$ErrorMessage - Service Cannot Accept Control" }
+            6  { Write-Error "$ErrorMessage - Service Not Active" }
+            7  { Write-Error "$ErrorMessage - Service Request timeout" }
+            8  { Write-Error "$ErrorMessage - Unknown Failure" }
+            9  { Write-Error "$ErrorMessage - Path Not Found" }
+            10 { Write-Error "$ErrorMessage - Service Already Stopped" }
+            11 { Write-Error "$ErrorMessage - Service Database Locked" }
+            12 { Write-Error "$ErrorMessage - Service Dependency Deleted" }
+            13 { Write-Error "$ErrorMessage - Service Dependency Failure" }
+            14 { Write-Error "$ErrorMessage - Service Disabled" }
+            15 { Write-Error "$ErrorMessage - Service Logon Failed" }
+            16 { Write-Error "$ErrorMessage - Service Marked For Deletion" }
+            17 { Write-Error "$ErrorMessage - Service No Thread" }
+            18 { Write-Error "$ErrorMessage - Status Circular Dependency" }
+            19 { Write-Error "$ErrorMessage - Status Duplicate Name" }
+            20 { Write-Error "$ErrorMessage - Status Invalid Name" }
+            21 { Write-Error "$ErrorMessage - Status Invalid Parameter" }
+            22 { Write-Error "$ErrorMessage - Status Invalid Service Account" }
+            23 { Write-Error "$ErrorMessage - Status Service Exists" }
+            24 { Write-Error "$ErrorMessage - Service Already Paused" }
         }
     }
 }
