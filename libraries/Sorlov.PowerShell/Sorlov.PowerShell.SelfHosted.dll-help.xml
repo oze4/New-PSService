@@ -1,0 +1,537 @@
+<helpItems xmlns="http://msh" schema="maml">
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>Get-SelfHostedPS</command:name>
+      <maml:description>
+        <maml:para>Gets information about a self hosted PS exe file</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright ©  2013</maml:para>
+      </maml:copyright>
+      <command:verb>Get</command:verb>
+      <command:noun>SelfHostedPS</command:noun>
+      <dev:version>4.2.5.4</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This cmdlet displays information about a self-hosted file</maml:para>
+      <maml:para />
+      <maml:para>Copyright ©  2013</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>Get-SelfHostedPS</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>Path</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByValue, ByPropertyName)" position="1" variableLength="false">
+        <maml:name>Path</maml:name>
+        <maml:description>
+          <maml:para>The name and path to process</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help Get-SelfHostedPS -detailed". For technical information, type "Get-Help Get-SelfHostedPS -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+  <command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/1" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10">
+    <command:details>
+      <command:name>New-SelfHostedPS</command:name>
+      <maml:description>
+        <maml:para>Exports a PS1 to a EXE file</maml:para>
+      </maml:description>
+      <maml:copyright>
+        <maml:para>Copyright ©  2013</maml:para>
+      </maml:copyright>
+      <command:verb>New</command:verb>
+      <command:noun>SelfHostedPS</command:noun>
+      <dev:version>4.2.5.4</dev:version>
+    </command:details>
+    <maml:description>
+      <maml:para>This commandlet creates a self-hosted PS1 file as a EXE file</maml:para>
+      <maml:para />
+      <maml:para>Copyright ©  2013</maml:para>
+    </maml:description>
+    <command:syntax>
+      <command:syntaxItem>
+        <maml:name>New-SelfHostedPS</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>SourceFile</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>DestinationFile</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="3">
+          <maml:name>IconPath</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="4">
+          <maml:name>ServiceName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="5">
+          <maml:name>ServiceDescription</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="6">
+          <maml:name>ServiceDisplayName</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="true" position="7">
+          <maml:name>Service</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>FrameworkVersion</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>LCID</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>ThreadMode</maml:name>
+          <command:parameterValue required="true">STA | MTA</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Platform</maml:name>
+          <command:parameterValue required="true">anycpu | x86 | x64</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>BuildDebug</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Version</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>EmbedCore</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>EmbedModules</maml:name>
+          <command:parameterValue required="true">PSModuleInfo[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Sign</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Certificate</maml:name>
+          <command:parameterValue required="true">X509Certificate2</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>TimestampURL</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+      <command:syntaxItem>
+        <maml:name>New-SelfHostedPS</maml:name>
+        <command:parameter required="true" position="1">
+          <maml:name>SourceFile</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="2">
+          <maml:name>DestinationFile</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="3">
+          <maml:name>IconPath</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="4">
+          <maml:name>HideConsole</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>FrameworkVersion</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>LCID</maml:name>
+          <command:parameterValue required="true">Int32</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>ThreadMode</maml:name>
+          <command:parameterValue required="true">STA | MTA</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Platform</maml:name>
+          <command:parameterValue required="true">anycpu | x86 | x64</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>BuildDebug</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Version</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>EmbedCore</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>EmbedModules</maml:name>
+          <command:parameterValue required="true">PSModuleInfo[]</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Sign</maml:name>
+          <command:parameterValue required="true">SwitchParameter</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>Certificate</maml:name>
+          <command:parameterValue required="true">X509Certificate2</command:parameterValue>
+        </command:parameter>
+        <command:parameter required="false" position="named">
+          <maml:name>TimestampURL</maml:name>
+          <command:parameterValue required="true">String</command:parameterValue>
+        </command:parameter>
+      </command:syntaxItem>
+    </command:syntax>
+    <command:parameters>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="1" variableLength="false">
+        <maml:name>SourceFile</maml:name>
+        <maml:description>
+          <maml:para>The name and path to process</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="2" variableLength="false">
+        <maml:name>DestinationFile</maml:name>
+        <maml:description>
+          <maml:para>The name and path to output</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="3" variableLength="false">
+        <maml:name>IconPath</maml:name>
+        <maml:description>
+          <maml:para>The icon to embed into the application</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="4" variableLength="false">
+        <maml:name>HideConsole</maml:name>
+        <maml:description>
+          <maml:para>Do not show the console when running</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="4" variableLength="false">
+        <maml:name>ServiceName</maml:name>
+        <maml:description>
+          <maml:para>The name of the service</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="5" variableLength="false">
+        <maml:name>ServiceDescription</maml:name>
+        <maml:description>
+          <maml:para>The description for the service</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="true (ByPropertyName)" position="6" variableLength="false">
+        <maml:name>ServiceDisplayName</maml:name>
+        <maml:description>
+          <maml:para>The description for the service</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="true" globbing="false" pipelineInput="false" position="7" variableLength="false">
+        <maml:name>Service</maml:name>
+        <maml:description>
+          <maml:para>Create a service instead of a standalone exe</maml:para>
+        </maml:description>
+        <command:parameterValue required="true" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>FrameworkVersion</maml:name>
+        <maml:description>
+          <maml:para>Force framework version</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>LCID</maml:name>
+        <maml:description>
+          <maml:para>The LCID for the app</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Int32</command:parameterValue>
+        <dev:type>
+          <maml:name>Int32</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>ThreadMode</maml:name>
+        <maml:description>
+          <maml:para>Thread mode of application</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">ThreadMode</command:parameterValue>
+        <dev:type>
+          <maml:name>ThreadMode</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>Platform</maml:name>
+        <maml:description>
+          <maml:para>Target plattform</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">Platform</command:parameterValue>
+        <dev:type>
+          <maml:name>Platform</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>BuildDebug</maml:name>
+        <maml:description>
+          <maml:para>Build debug files</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>Version</maml:name>
+        <maml:description>
+          <maml:para>Version number for generated assembly</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>EmbedCore</maml:name>
+        <maml:description>
+          <maml:para>Embed core dll in output file</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="false" position="named" variableLength="true">
+        <maml:name>EmbedModules</maml:name>
+        <maml:description>
+          <maml:para>Modules to embed</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="true">PSModuleInfo[]</command:parameterValue>
+        <dev:type>
+          <maml:name>PSModuleInfo[]</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>Sign</maml:name>
+        <maml:description>
+          <maml:para>Should the file be signed</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>
+        <dev:type>
+          <maml:name>SwitchParameter</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>Certificate</maml:name>
+        <maml:description>
+          <maml:para>Manually specify a certificate file</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">X509Certificate2</command:parameterValue>
+        <dev:type>
+          <maml:name>X509Certificate2</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+      <command:parameter required="false" globbing="false" pipelineInput="true (ByPropertyName)" position="named" variableLength="false">
+        <maml:name>TimestampURL</maml:name>
+        <maml:description>
+          <maml:para>The timestamping URL</maml:para>
+        </maml:description>
+        <command:parameterValue required="false" variableLength="false">String</command:parameterValue>
+        <dev:type>
+          <maml:name>String</maml:name>
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:parameter>
+    </command:parameters>
+    <command:inputTypes>
+      <command:inputType>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:inputType>
+    </command:inputTypes>
+    <command:returnValues>
+      <command:returnValue>
+        <dev:type>
+          <maml:name />
+          <maml:uri />
+          <maml:description>
+            <maml:para />
+          </maml:description>
+        </dev:type>
+      </command:returnValue>
+    </command:returnValues>
+    <command:terminatingErrors />
+    <command:nonTerminatingErrors />
+    <maml:alertSet>
+      <maml:title />
+      <maml:alert>
+        <maml:para>For more information, type "Get-Help New-SelfHostedPS -detailed". For technical information, type "Get-Help New-SelfHostedPS -full".</maml:para>
+      </maml:alert>
+    </maml:alertSet>
+    <command:examples />
+    <maml:relatedLinks />
+  </command:command>
+</helpItems>
