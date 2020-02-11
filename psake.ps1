@@ -2,55 +2,55 @@
 # Init some things
 Properties {
     # Find the build folder based on build system
-    $ProjectRoot         = $PSScriptRoot
-    $ModuleName          = "ScriptAsService"
-    $ModuleVersion       = Get-Module -ListAvailable "$PSScriptRoot\Source\$ModuleName.psd1" | Select-Object -ExpandProperty Version
-    $BuildFolder         = "$ProjectRoot\$ModuleName\$ModuleVersion"
-    $Timestamp           = Get-date -uformat "%Y%m%d-%H%M%S"
-    $PSVersion           = $PSVersionTable.PSVersion.Major
-    $TestFile            = "TestResults_PS$PSVersion`_$TimeStamp.xml"
-    $ApiKey              = 'guid'
-    $Gallery             = "Testing"
-    $DeploymentFile      = "$ModuleName.$ModuleVersion.PSDeploy.ps1"
-    $Credential          = 'CredentialPlaceHolder'
-    $GalleryComputerName = ''
-    $Clean               = $false
+    $ProjectRoot   = $env:BHProjectPath
+    $ModuleName    = $env:BHProjectName
+    $ModuleVersion = (Get-Module -ListAvailable $env:BHPSModuleManifest).Version
+    $SpecsFolder   = (Resolve-Path "$ProjectRoot\Specs")
+    $TestsFolder   = (Resolve-Path "$ProjectRoot\Tests")
+    $BuildFolder   = "$ProjectRoot\$ModuleName\$ModuleVersion"
+    $Timestamp     = Get-date -uformat "%Y%m%d-%H%M%S"
+    $PSVersion     = $PSVersionTable.PSVersion.Major
+    $HelpOutput    = "Results_Help`_$TimeStamp.xml"
+    $SpecOutput    = "Results_Specs_PS$PSVersion`_$TimeStamp.xml"
+    $ApiKey        = $env:APIKEY
 }
 
 Task Default -Depends Test
 
-Task Test {
-    $TestResults = Invoke-Pester -Path $PSScriptRoot -OutputFile "$PSScriptRoot\$TestFile" -OutputFormat NUnitXml  -PassThru -Verbose
-    if($TestResults[0].FailedCount -gt 0)
-    {
-        Write-Error "Failed '$($TestResults[0].FailedCount)' tests, build failed"
-    }
-    "`n"
-}
-
-Task Build -depends Test {
+Task Build {
     Write-Host "Building Module Structure"  -ForegroundColor Blue
-    $Functions = Get-ChildItem -Path $ProjectRoot\Source\Functions -Recurse -Exclude *.Tests.* -File | ForEach-Object -Process {Get-Content -Path $_.FullName; "`r`n"}
+    $Functions = Get-ChildItem -Path $ProjectRoot\Source\Functions -Recurse -Exclude *.Tests.* -File `
+    | ForEach-Object -Process {Get-Content -Path $_.FullName; "`r`n"}
     If (-not (Test-Path $BuildFolder)) {
+        Write-Host "Creating Output Folder"  -ForegroundColor Blue
         $Null = New-Item -Path $BuildFolder -Type Directory -Force
     } Else {
-        $Null = Remove-Item -Path $BuildFolder\* -Recurse -Force
+        Write-Host "Clearing Existing Output Folder"  -ForegroundColor Blue
+        $Null = Remove-Item -Path $BuildFolder -Recurse -Force
     }
     Write-Host "Placing Dependencies"  -ForegroundColor Blue
-    $Null = Copy-Item   -Path "$ProjectRoot\Libraries"     -Container -Recurse -Destination $BuildFolder -Force
+    $Null = Copy-Item   -Path "$ProjectRoot\Source\libraries" -Container -Recurse -Destination $BuildFolder\Libraries -Force
     Write-Host "Copying Module Manifest"  -ForegroundColor Blue
     $Null = Copy-Item   -Path "$ProjectRoot\Source\$ModuleName.psd1" -Destination $BuildFolder -Force
     Write-Host "Creating and compiling Module file"  -ForegroundColor Blue
     $Null = New-Item    -Path "$BuildFolder\$ModuleName.psm1" -Type File -Force
-    $Null = Get-Content -Path "$ProjectRoot\Source\$ModuleName.psm1" | Select-Object -First 5 | Add-Content -Path $BuildFolder\$ModuleName.psm1
     $Null = Add-Content -Path "$BuildFolder\$ModuleName.psm1" -Value $Functions,"`r`n"
-    $Null = Get-Content -Path "$ProjectRoot\Source\$ModuleName.psm1" | Select-Object -Last 1 | Add-Content -Path $BuildFolder\$ModuleName.psm1
+    $Null = Get-Content -Path "$ProjectRoot\Source\$ModuleName.psm1" `
+    | Select-Object -Last 1 `
+    | Add-Content -Path $BuildFolder\$ModuleName.psm1
 
     Write-Host "Module built, verifying module output" -ForegroundColor Blue 
-    Get-Module -ListAvailable "$BuildFolder\$ModuleName.psd1" | ForEach-Object -Process {
-        $ExportedFunctions = $_ | Select-Object -Property @{ Name = "ExportedFunctions" ; Expression = { [string[]]$_.ExportedFunctions.Keys } } | Select-Object -ExpandProperty ExportedFunctions
-        $ExportedAliases   = $_ | Select-Object -Property @{ Name = "ExportedAliases"   ; Expression = { [string[]]$_.ExportedAliases.Keys   } } | Select-Object -ExpandProperty ExportedAliases
-        $ExportedVariables = $_ | Select-Object -Property @{ Name = "ExportedVariables" ; Expression = { [string[]]$_.ExportedVariables.Keys } } | Select-Object -ExpandProperty ExportedVariables
+    Get-Module -ListAvailable "$BuildFolder\$ModuleName.psd1" `
+    | ForEach-Object -Process {
+        $ExportedFunctions = $_ `
+        | Select-Object -Property @{ Name = "ExportedFunctions" ; Expression = { [string[]]$_.ExportedFunctions.Keys } } `
+        | Select-Object -ExpandProperty ExportedFunctions
+        $ExportedAliases   = $_ `
+        | Select-Object -Property @{ Name = "ExportedAliases"   ; Expression = { [string[]]$_.ExportedAliases.Keys   } } `
+        | Select-Object -ExpandProperty ExportedAliases
+        $ExportedVariables = $_ `
+        | Select-Object -Property @{ Name = "ExportedVariables" ; Expression = { [string[]]$_.ExportedVariables.Keys } } `
+        | Select-Object -ExpandProperty ExportedVariables
         Write-Output "Name              : $($_.Name)"
         Write-Output "Description       : $($_.Description)"
         Write-Output "Guid              : $($_.Guid)"
@@ -62,50 +62,28 @@ Task Build -depends Test {
     }
 }
 
-Task Deploy -depends Build {
-    "Deploy $ModuleName {
-        By PSGalleryModule To$Gallery {
-            FromSource $BuildFolder
-            To $Gallery
-            Tagged master, Module
-            WithOptions @{
-                ApiKey = `'$ApiKey`'
-            }
-        }
-    }" | Out-File $DeploymentFile
-    Invoke-PSDeploy -Path $DeploymentFile -Verbose -Force
+Task Test -Depends Build {
+    Write-Host "Testing Module Help"  -ForegroundColor Blue
+    $HelpResults = Invoke-Pester $TestsFolder -OutputFormat NUnitXml -OutputFile $HelpOutput -PassThru
+    If ($HelpResults.FailedCount -gt 0) {
+        Exit $HelpResults.FailedCount
+    }
+    # This will be uncommented once we're ready to actually start using gherkin.
+    #Write-Host "Testing Module Specifications"  -ForegroundColor Blue
+    #$SpecResults = Invoke-Gherkin $SpecsFolder -OutputFormat NUnitXml -OutputFile $SpecOutput
 }
 
-Task Publish {
-    Push-Location $ProjectRoot
-    mkdocs build --quiet --clean
-
-    $SessionOptions = New-PSSessionOption -SkipRevocationCheck -SkipCACheck -SkipCNCheck
-    $Session = New-PSSession -ComputerName $GalleryComputerName -Credential $Credential -UseSSL -SessionOption $SessionOptions -Verbose 
-
-    If ($Clean -eq $True){
-        Invoke-Command -Verbose -Session $Session -ArgumentList $ModuleName -ScriptBlock {
-            Param ($ModuleName)
-            Remove-Item -Path C:\Docs\$ModuleName\* -Recurse -Force -Verbose
-        } 
-    }
-
-    Invoke-Command -Session $Session -ArgumentList C:\Docs\$ModuleName -ScriptBlock {
-        Param ($Path)
-        If(-not (Test-Path $Path)){
-            New-Item -Path $Path -ItemType Directory -Force -Verbose
+Task Deploy -Depends Test {
+    Write-Host "Deploying the module to the Gallery" -ForegroundColor Blue
+    $GalleryModule = Find-Module -Name $ModuleName -ErrorAction SilentlyContinue
+    Try {
+        If ([string]::IsNullOrEmpty($GalleryModule) -or ($GalleryModule.Version -lt $ModuleVersion)) {
+            Publish-Module -Path "$BuildFolder" -NuGetApiKey $ApiKey -ErrorAction Stop -Verbose
+        } Else {
+            Throw "Version of the module being published is not higher than the version on the gallery!"
         }
+    } Catch {
+        Format-List -InputObject $Error[0] -Force -Property *
+        exit 0
     }
-    
-    # We've broken the file copy out here into two pieces (top level  files and recursive by directory) because there's
-    # a bug in PowerShell when copying over a session; namely it copies the objects from the first source folder to the
-    # top level folder in the destination instead of an appropriate subfolder. In this case, css files were being copied
-    # to the C:\Docs\$ModuleName instead of C:\Docs\$ModuleName\css - this section is a fix for that behavior.
-    Get-ChildItem -Path .\site -File | Copy-Item -ToSession $Session -Destination C:\Docs\$ModuleName -Force -Verbose
-    Get-ChildItem -Path .\site -Directory | ForEach-Object {
-        $Destination = "C:\Docs\$ModuleName\$(split-path $_.FullName -Leaf)"
-        Copy-Item -ToSession $Session -Path $_.FullName -Destination $Destination -Recurse -Verbose -Force
-    }
-
-    Remove-PSSession -Session $Session
 }
